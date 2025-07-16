@@ -1,374 +1,903 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How It Works - SemStore</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e40af',
-                        secondary: '#1e3a8a',
-                        accent: '#10b981',
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e40af",
+              secondary: "#1e3a8a",
+              accent: "#10b981",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
-</head>
-<body class="font-sans bg-gray-50">
+  </head>
+  <body class="font-sans bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-primary">SemStore</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-primary font-medium">Home</a>
-                    <a href="services.html" class="text-gray-800 hover:text-primary font-medium">Services</a>
-                    <a href="pricing.html" class="text-gray-800 hover:text-primary font-medium">Pricing</a>
-                    <a href="process.html" class="text-primary font-medium">How It Works</a>
-                    <a href="contact.html" class="text-gray-800 hover:text-primary font-medium">Contact</a>
-                </div>
-                <button class="md:hidden focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a
+            href="index.html"
+            class="text-2xl font-bold text-primary flex items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+              />
+            </svg>
+            SemStore
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Home</a
+            >
+            <a
+              href="services.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Services</a
+            >
+            <a
+              href="pricing.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Pricing</a
+            >
+            <a
+              href="process.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >How It Works</a
+            >
+            <a href="contact.html" class="text-primary font-medium">Contact</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
         </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+          <div class="flex flex-col space-y-3">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Home</a
+            >
+            <a
+              href="services.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Services</a
+            >
+            <a
+              href="pricing.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Pricing</a
+            >
+            <a
+              href="process.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >How It Works</a
+            >
+            <a href="contact.html" class="text-primary font-medium py-2"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">How It Works</h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Simple steps to store your items during semester break.</p>
-        </div>
+    <section
+      class="bg-gradient-to-r from-primary to-secondary text-white py-20"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">How It Works</h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Simple steps to store your items during semester break.
+        </p>
+      </div>
     </section>
 
     <!-- Process Steps -->
     <section class="py-16">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="relative">
-                    <!-- Timeline line -->
-                    <div class="hidden md:block absolute top-0 bottom-0 left-1/2 w-1 bg-gray-200 transform -translate-x-1/2"></div>
-                    
-                    <!-- Step 1 -->
-                    <div class="relative mb-12 md:flex items-center">
-                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">1. Book Your Storage</h3>
-                            <p class="text-gray-600">Reserve your storage space online or by phone. Choose your storage duration and services.</p>
-                        </div>
-                        <div class="hidden md:block w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto flex-shrink-0">
-                            <span class="text-2xl font-bold">1</span>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-                                </svg>
-                                <p class="text-gray-600">You'll receive a confirmation email with your storage details and preparation instructions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 2 -->
-                    <div class="relative mb-12 md:flex items-center">
-                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-2 md:order-1">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                </svg>
-                                <p class="text-gray-600">Our team will check in your items, tag them, and place them in secure storage.</p>
-                            </div>
-                        </div>
-                        <div class="hidden md:block w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto flex-shrink-0 order-1 md:order-2">
-                            <span class="text-2xl font-bold">2</span>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12 order-3">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">2. Drop Off Your Items</h3>
-                            <p class="text-gray-600">Bring your items to our facility at your scheduled time. We're located near campus for convenience.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="relative mb-12 md:flex items-center">
-                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">3. Enjoy Your Break</h3>
-                            <p class="text-gray-600">Relax knowing your belongings are safe and secure while you're away.</p>
-                        </div>
-                        <div class="hidden md:block w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto flex-shrink-0">
-                            <span class="text-2xl font-bold">3</span>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                                </svg>
-                                <p class="text-gray-600">Optional: Request updates or photos of your items during storage.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 4 -->
-                    <div class="relative md:flex items-center">
-                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-2 md:order-1">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <svg class="w-12 h-12 text-primary mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                                </svg>
-                                <p class="text-gray-600">Pick up your items in the same condition you left them, ready for the new semester.</p>
-                            </div>
-                        </div>
-                        <div class="hidden md:block w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto flex-shrink-0 order-1 md:order-2">
-                            <span class="text-2xl font-bold">4</span>
-                        </div>
-                        <div class="md:w-1/2 md:pl-12 order-3">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">4. Pick Up When You Return</h3>
-                            <p class="text-gray-600">Schedule your pickup for when you're back on campus. We're flexible with timing.</p>
-                        </div>
-                    </div>
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="relative">
+            <!-- Timeline line -->
+            <div
+              class="hidden md:block absolute top-0 bottom-0 left-1/2 w-1 bg-gray-200 transform -translate-x-1/2"
+            ></div>
+
+            <!-- Step 1 -->
+            <div class="relative mb-12 md:flex items-center">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                  1. Book Your Storage
+                </h3>
+                <p class="text-gray-600">
+                  Reserve your storage space online or by phone. Choose your
+                  storage duration and services.
+                </p>
+              </div>
+              <div
+                class="hidden md:block w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto flex-shrink-0"
+              >
+                <span class="text-2xl font-bold">1</span>
+              </div>
+              <div class="md:w-1/2 md:pl-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <svg
+                    class="w-12 h-12 text-primary mb-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                    ></path>
+                  </svg>
+                  <p class="text-gray-600">
+                    You'll receive a confirmation email with your storage
+                    details and preparation instructions.
+                  </p>
                 </div>
+              </div>
             </div>
+
+            <!-- Step 2 -->
+            <div class="relative mb-12 md:flex items-center">
+              <div
+                class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-2 md:order-1"
+              >
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <svg
+                    class="w-12 h-12 text-primary mb-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                    ></path>
+                  </svg>
+                  <p class="text-gray-600">
+                    Our team will check in your items, tag them, and place them
+                    in secure storage.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="hidden md:block w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto flex-shrink-0 order-1 md:order-2"
+              >
+                <span class="text-2xl font-bold">2</span>
+              </div>
+              <div class="md:w-1/2 md:pl-12 order-3">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                  2. Drop Off Your Items
+                </h3>
+                <p class="text-gray-600">
+                  Bring your items to our facility at your scheduled time. We're
+                  located near campus for convenience.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative mb-12 md:flex items-center">
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                  3. Enjoy Your Break
+                </h3>
+                <p class="text-gray-600">
+                  Relax knowing your belongings are safe and secure while you're
+                  away.
+                </p>
+              </div>
+              <div
+                class="hidden md:block w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto flex-shrink-0"
+              >
+                <span class="text-2xl font-bold">3</span>
+              </div>
+              <div class="md:w-1/2 md:pl-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <svg
+                    class="w-12 h-12 text-primary mb-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                    ></path>
+                  </svg>
+                  <p class="text-gray-600">
+                    Optional: Request updates or photos of your items during
+                    storage.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="relative md:flex items-center">
+              <div
+                class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0 order-2 md:order-1"
+              >
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                  <svg
+                    class="w-12 h-12 text-primary mb-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                    ></path>
+                  </svg>
+                  <p class="text-gray-600">
+                    Pick up your items in the same condition you left them,
+                    ready for the new semester.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="hidden md:block w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center mx-auto flex-shrink-0 order-1 md:order-2"
+              >
+                <span class="text-2xl font-bold">4</span>
+              </div>
+              <div class="md:w-1/2 md:pl-12 order-3">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                  4. Pick Up When You Return
+                </h3>
+                <p class="text-gray-600">
+                  Schedule your pickup for when you're back on campus. We're
+                  flexible with timing.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Preparation Tips -->
     <section class="bg-gray-100 py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Preparation Tips</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Tip 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 flex items-center">
-                        <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                        </svg>
-                        Electronics
-                    </h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-start">
-                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Back up important data
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Remove batteries if possible
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Use original packaging if available
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Tip 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 flex items-center">
-                        <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
-                        </svg>
-                        Furniture
-                    </h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-start">
-                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Disassemble large pieces
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Wrap fragile parts
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Keep hardware in labeled bags
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Tip 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 flex items-center">
-                        <svg class="w-6 h-6 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        Bicycles
-                    </h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li class="flex items-start">
-                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Clean and dry your bike
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Consider a tune-up before storage
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Release tire pressure slightly
-                        </li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          Preparation Tips
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Tip 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-3 flex items-center">
+              <svg
+                class="w-6 h-6 text-accent mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                ></path>
+              </svg>
+              Electronics
+            </h3>
+            <ul class="text-gray-600 space-y-2">
+              <li class="flex items-start">
+                <svg
+                  class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Back up important data
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Remove batteries if possible
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Use original packaging if available
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tip 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-3 flex items-center">
+              <svg
+                class="w-6 h-6 text-accent mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                ></path>
+              </svg>
+              Furniture
+            </h3>
+            <ul class="text-gray-600 space-y-2">
+              <li class="flex items-start">
+                <svg
+                  class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Disassemble large pieces
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Wrap fragile parts
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Keep hardware in labeled bags
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tip 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-3 flex items-center">
+              <svg
+                class="w-6 h-6 text-accent mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              Bicycles
+            </h3>
+            <ul class="text-gray-600 space-y-2">
+              <li class="flex items-start">
+                <svg
+                  class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Clean and dry your bike
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Consider a tune-up before storage
+              </li>
+              <li class="flex items-start">
+                <svg
+                  class="w-4 h-4 text-accent mt-1 mr-2 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                Release tire pressure slightly
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Frequently Asked Questions</h2>
-            <div class="max-w-3xl mx-auto">
-                <!-- FAQ Item 1 -->
-                <div class="mb-6">
-                    <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-lg px-6 py-4 transition duration-300">
-                        <span>What items can I store with SemStore?</span>
-                        <svg class="w-5 h-5 text-primary transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="px-6 pt-4 pb-2 text-gray-600">
-                        <p>We accept most personal items including luggage, bicycles, small furniture, electronics, and seasonal items. We cannot store perishable food, plants, hazardous materials, or illegal items. If you're unsure about an item, please contact us.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 2 -->
-                <div class="mb-6">
-                    <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-lg px-6 py-4 transition duration-300">
-                        <span>Do I need to provide my own boxes or packing materials?</span>
-                        <svg class="w-5 h-5 text-primary transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="px-6 pt-4 pb-2 text-gray-600">
-                        <p>You can provide your own packing materials, or we offer packing supplies for purchase including boxes, bubble wrap, and furniture covers. We also provide free labels and inventory tags for all stored items.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 3 -->
-                <div class="mb-6">
-                    <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-lg px-6 py-4 transition duration-300">
-                        <span>Can I access my items during the storage period?</span>
-                        <svg class="w-5 h-5 text-primary transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="px-6 pt-4 pb-2 text-gray-600">
-                        <p>Yes, with advance notice. We offer scheduled access to your stored items for $10 per retrieval. Simply contact us at least 24 hours before you'd like to access your items, and we'll have them ready for you.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 4 -->
-                <div class="mb-6">
-                    <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-lg px-6 py-4 transition duration-300">
-                        <span>What happens if I need to extend my storage period?</span>
-                        <svg class="w-5 h-5 text-primary transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="px-6 pt-4 pb-2 text-gray-600">
-                        <p>No problem! Just contact us at least 3 days before your scheduled pickup date to arrange an extension. Extended periods will be charged at the same rate as your original booking.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 5 -->
-                <div class="mb-6">
-                    <button class="flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 bg-gray-100 hover:bg-gray-200 rounded-lg px-6 py-4 transition duration-300">
-                        <span>Is there insurance for my stored items?</span>
-                        <svg class="w-5 h-5 text-primary transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div class="px-6 pt-4 pb-2 text-gray-600">
-                        <p>All storage plans include basic coverage. You can upgrade to enhanced or premium insurance when you book your storage. We recommend checking if your parents' home insurance or your student insurance provides any coverage for stored items as well.</p>
-                    </div>
-                </div>
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          Frequently Asked Questions
+        </h2>
+        <div class="max-w-4xl mx-auto space-y-3">
+          <!-- FAQ Item 1 -->
+          <div
+            class="group rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex justify-between items-center p-5 lg:p-6 text-left"
+            >
+              <h3
+                class="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-primary transition-colors"
+              >
+                What items can I store with SemStore?
+              </h3>
+              <div class="ml-4 shrink-0">
+                <svg
+                  class="w-5 h-5 text-primary transform transition-transform duration-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M19 9L12 16L5 9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
+            <div
+              class="faq-content px-5 lg:px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="pb-5 lg:pb-6 text-gray-600">
+                <p>
+                  We accept most personal items including luggage, bicycles,
+                  small furniture, electronics, and seasonal items. We cannot
+                  store perishable food, plants, hazardous materials, or illegal
+                  items. If you're unsure about an item, please contact us.
+                </p>
+              </div>
             </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div
+            class="group rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex justify-between items-center p-5 lg:p-6 text-left"
+            >
+              <h3
+                class="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-primary transition-colors"
+              >
+                Do I need to provide my own boxes or packing materials?
+              </h3>
+              <div class="ml-4 shrink-0">
+                <svg
+                  class="w-5 h-5 text-primary transform transition-transform duration-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M19 9L12 16L5 9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
+            <div
+              class="faq-content px-5 lg:px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="pb-5 lg:pb-6 text-gray-600">
+                <p>
+                  You can provide your own packing materials, or we offer
+                  packing supplies for purchase including boxes, bubble wrap,
+                  and furniture covers. We also provide free labels and
+                  inventory tags for all stored items.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div
+            class="group rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex justify-between items-center p-5 lg:p-6 text-left"
+            >
+              <h3
+                class="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-primary transition-colors"
+              >
+                Can I access my items during the storage period?
+              </h3>
+              <div class="ml-4 shrink-0">
+                <svg
+                  class="w-5 h-5 text-primary transform transition-transform duration-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M19 9L12 16L5 9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
+            <div
+              class="faq-content px-5 lg:px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="pb-5 lg:pb-6 text-gray-600">
+                <p>
+                  Yes, with advance notice. We offer scheduled access to your
+                  stored items for RM10 per retrieval. Simply contact us at
+                  least 24 hours before you'd like to access your items, and
+                  we'll have them ready for you.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div
+            class="group rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex justify-between items-center p-5 lg:p-6 text-left"
+            >
+              <h3
+                class="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-primary transition-colors"
+              >
+                What happens if I need to extend my storage period?
+              </h3>
+              <div class="ml-4 shrink-0">
+                <svg
+                  class="w-5 h-5 text-primary transform transition-transform duration-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M19 9L12 16L5 9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
+            <div
+              class="faq-content px-5 lg:px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="pb-5 lg:pb-6 text-gray-600">
+                <p>
+                  No problem! Just contact us at least 3 days before your
+                  scheduled pickup date to arrange an extension. Extended
+                  periods will be charged at the same rate as your original
+                  booking.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <!-- <div
+            class="group rounded-xl bg-white shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden"
+          >
+            <button
+              class="faq-toggle w-full flex justify-between items-center p-5 lg:p-6 text-left"
+            >
+              <h3
+                class="text-lg lg:text-xl font-semibold text-gray-800 group-hover:text-primary transition-colors"
+              >
+                Is there insurance for my stored items?
+              </h3>
+              <div class="ml-4 shrink-0">
+                <svg
+                  class="w-5 h-5 text-primary transform transition-transform duration-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M19 9L12 16L5 9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
+            <div
+              class="faq-content px-5 lg:px-6 pb-0 max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="pb-5 lg:pb-6 text-gray-600">
+                <p>
+                  All storage plans include basic coverage. You can upgrade to
+                  enhanced or premium insurance when you book your storage. We
+                  recommend checking if your parents' home insurance or your
+                  student insurance provides any coverage for stored items as
+                  well.
+                </p>
+              </div>
+            </div>
+          </div> -->
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">SemStore</h3>
-                    <p class="text-gray-400">Student storage solutions for semester breaks and vacations.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Services</a></li>
-                        <li><a href="pricing.html" class="text-gray-400 hover:text-white transition">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Information</h4>
-                    <ul class="space-y-2">
-                        <li><a href="process.html" class="text-gray-400 hover:text-white transition">How It Works</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <address class="text-gray-400 not-italic">
-                        <p>123 Campus Drive</p>
-                        <p>University Town, 12345</p>
-                        <p class="mt-2">Email: info@semstore.com</p>
-                        <p>Phone: (123) 456-7890</p>
-                    </address>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 SemStore. All rights reserved.</p>
-            </div>
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">SemStore</h3>
+            <p class="text-gray-400">
+              Student storage solutions for semester breaks and vacations.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pricing.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Pricing</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Information</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="process.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Contact</h4>
+            <address class="text-gray-400 not-italic">
+              <p>123 Campus Drive</p>
+              <p>University Town, 12345</p>
+              <p class="mt-2">Email: info@semstore.com</p>
+              <p>Phone: (123) 456-7890</p>
+            </address>
+          </div>
         </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2023 SemStore. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // Simple FAQ toggle functionality
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('svg');
-                
-                if (answer.style.maxHeight) {
-                    answer.style.maxHeight = null;
-                    icon.style.transform = 'rotate(0deg)';
-                } else {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    icon.style.transform = 'rotate(180deg)';
-                }
-            });
+      // Simple FAQ toggle functionality
+      document.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const answer = button.nextElementSibling;
+          const icon = button.querySelector("svg");
+
+          if (answer.style.maxHeight) {
+            answer.style.maxHeight = null;
+            icon.style.transform = "rotate(0deg)";
+          } else {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+            icon.style.transform = "rotate(180deg)";
+          }
         });
+      });
+      // Mobile menu toggle functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+
+        // Change the icon based on menu state
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenuButton.innerHTML = isOpen
+          ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+         </svg>`
+          : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+         </svg>`;
+      });
+      document.querySelectorAll(".faq-toggle").forEach((button) => {
+        button.addEventListener("click", () => {
+          const faqItem = button.closest(".group");
+          const content = faqItem.querySelector(".faq-content");
+          const icon = button.querySelector("svg");
+
+          // Toggle the current item
+          if (content.classList.contains("max-h-0")) {
+            // Close all others first
+            document.querySelectorAll(".faq-content").forEach((item) => {
+              if (item !== content) {
+                item.classList.add("max-h-0");
+                item.previousElementSibling
+                  .querySelector("svg")
+                  .classList.remove("rotate-180");
+              }
+            });
+
+            // Open this one
+            content.classList.remove("max-h-0");
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.classList.add("rotate-180");
+          } else {
+            content.classList.add("max-h-0");
+            icon.classList.remove("rotate-180");
+          }
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

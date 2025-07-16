@@ -1,313 +1,739 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Services - SemStore</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e40af',
-                        secondary: '#1e3a8a',
-                        accent: '#10b981',
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e40af",
+              secondary: "#1e3a8a",
+              accent: "#10b981",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
-</head>
-<body class="font-sans bg-gray-50">
+  </head>
+  <body class="font-sans bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-primary">SemStore</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-800 hover:text-primary font-medium">Home</a>
-                    <a href="services.html" class="text-primary font-medium">Services</a>
-                    <a href="pricing.html" class="text-gray-800 hover:text-primary font-medium">Pricing</a>
-                    <a href="process.html" class="text-gray-800 hover:text-primary font-medium">How It Works</a>
-                    <a href="contact.html" class="text-gray-800 hover:text-primary font-medium">Contact</a>
-                </div>
-                <button class="md:hidden focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a
+            href="index.html"
+            class="text-2xl font-bold text-primary flex items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+              />
+            </svg>
+            SemStore
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Home</a
+            >
+            <a
+              href="services.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Services</a
+            >
+            <a
+              href="pricing.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Pricing</a
+            >
+            <a
+              href="process.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >How It Works</a
+            >
+            <a href="contact.html" class="text-primary font-medium">Contact</a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
         </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+          <div class="flex flex-col space-y-3">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Home</a
+            >
+            <a
+              href="services.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Services</a
+            >
+            <a
+              href="pricing.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Pricing</a
+            >
+            <a
+              href="process.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >How It Works</a
+            >
+            <a href="contact.html" class="text-primary font-medium py-2"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Storage Services</h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">We offer specialized storage solutions designed specifically for students during semester breaks.</p>
-        </div>
+    <section
+      class="bg-gradient-to-r from-primary to-secondary text-white py-20"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Our Storage Services
+        </h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          We offer specialized storage solutions designed specifically for
+          students during semester breaks.
+        </p>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section class="py-16">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-blue-100 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Luggage Storage</h3>
-                        <p class="text-gray-600 mb-4">Perfect for suitcases, backpacks, and personal items. Various size options available.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Climate-controlled units
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                24/7 security monitoring
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Inventory tagging system
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-blue-100 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Bicycle & Motorcycle Storage</h3>
-                        <p class="text-gray-600 mb-4">Indoor and outdoor options with optional maintenance services.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Secure locking system
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Weather protection
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Optional tune-up service
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-blue-100 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Electronics Storage</h3>
-                        <p class="text-gray-600 mb-4">Specialized storage for laptops, gaming consoles, and other electronics.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Climate and humidity control
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Anti-static packaging available
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Battery maintenance option
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-blue-100 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Seasonal Items</h3>
-                        <p class="text-gray-600 mb-4">Store winter coats, summer gear, and other seasonal items.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Moth-proof storage
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Vacuum-sealing option
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Easy seasonal rotation
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-blue-100 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Furniture Storage</h3>
-                        <p class="text-gray-600 mb-4">For students moving out of dorms or apartments between semesters.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Large unit sizes
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Protective wrapping available
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Loading assistance
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="h-48 bg-blue-100 flex items-center justify-center">
-                        <svg class="w-20 h-20 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">Special Requests</h3>
-                        <p class="text-gray-600 mb-4">Custom solutions for unique storage needs.</p>
-                        <ul class="text-gray-600 space-y-2">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Musical instruments
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Sports equipment
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                Other special items
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-blue-100 flex items-center justify-center">
+              <svg
+                class="w-20 h-20 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                ></path>
+              </svg>
             </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3">Luggage Storage</h3>
+              <p class="text-gray-600 mb-4">
+                Perfect for suitcases, backpacks, and personal items. Various
+                size options available.
+              </p>
+              <ul class="text-gray-600 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Climate-controlled units
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  24/7 security monitoring
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Inventory tagging system
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-blue-100 flex items-center justify-center">
+              <svg
+                class="w-20 h-20 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3">
+                Bicycle & Motorcycle Storage
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Indoor and outdoor options with optional maintenance services.
+              </p>
+              <ul class="text-gray-600 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Secure locking system
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Weather protection
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Optional tune-up service
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-blue-100 flex items-center justify-center">
+              <svg
+                class="w-20 h-20 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                ></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3">Electronics Storage</h3>
+              <p class="text-gray-600 mb-4">
+                Specialized storage for laptops, gaming consoles, and other
+                electronics.
+              </p>
+              <ul class="text-gray-600 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Climate and humidity control
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Anti-static packaging available
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Battery maintenance option
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-blue-100 flex items-center justify-center">
+              <svg
+                class="w-20 h-20 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3">Seasonal Items</h3>
+              <p class="text-gray-600 mb-4">
+                Store winter coats, summer gear, and other seasonal items.
+              </p>
+              <ul class="text-gray-600 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Moth-proof storage
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Vacuum-sealing option
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Easy seasonal rotation
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-blue-100 flex items-center justify-center">
+              <svg
+                class="w-20 h-20 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                ></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3">Furniture Storage</h3>
+              <p class="text-gray-600 mb-4">
+                For students moving out of dorms or apartments between
+                semesters.
+              </p>
+              <ul class="text-gray-600 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Large unit sizes
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Protective wrapping available
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Loading assistance
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div class="h-48 bg-blue-100 flex items-center justify-center">
+              <svg
+                class="w-20 h-20 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3">Special Requests</h3>
+              <p class="text-gray-600 mb-4">
+                Custom solutions for unique storage needs.
+              </p>
+              <ul class="text-gray-600 space-y-2">
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Musical instruments
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Sports equipment
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 mr-2 text-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Other special items
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="bg-gray-100 py-16">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Need Help Choosing?</h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Our team can recommend the perfect storage solution for your needs.</p>
-            <a href="contact.html" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300 transform hover:scale-105">
-                Contact Us
-            </a>
-        </div>
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          Need Help Choosing?
+        </h2>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          Our team can recommend the perfect storage solution for your needs.
+        </p>
+        <a
+          href="contact.html"
+          class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full inline-block transition duration-300 transform hover:scale-105"
+        >
+          Contact Us
+        </a>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">SemStore</h3>
-                    <p class="text-gray-400">Student storage solutions for semester breaks and vacations.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Services</a></li>
-                        <li><a href="pricing.html" class="text-gray-400 hover:text-white transition">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Information</h4>
-                    <ul class="space-y-2">
-                        <li><a href="process.html" class="text-gray-400 hover:text-white transition">How It Works</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
-                    <address class="text-gray-400 not-italic">
-                        <p>123 Campus Drive</p>
-                        <p>University Town, 12345</p>
-                        <p class="mt-2">Email: info@semstore.com</p>
-                        <p>Phone: (123) 456-7890</p>
-                    </address>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 SemStore. All rights reserved.</p>
-            </div>
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">SemStore</h3>
+            <p class="text-gray-400">
+              Student storage solutions for semester breaks and vacations.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pricing.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Pricing</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Information</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="process.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Contact</h4>
+            <address class="text-gray-400 not-italic">
+              <p>123 Campus Drive</p>
+              <p>University Town, 12345</p>
+              <p class="mt-2">Email: info@semstore.com</p>
+              <p>Phone: (123) 456-7890</p>
+            </address>
+          </div>
         </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2023 SemStore. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
-</body>
+    <script>
+      // Mobile menu toggle functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+
+        // Change the icon based on menu state
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenuButton.innerHTML = isOpen
+          ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+         </svg>`
+          : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+         </svg>`;
+      });
+    </script>
+  </body>
 </html>
