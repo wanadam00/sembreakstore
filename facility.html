@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Facility - SemStore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1e40af",
+              secondary: "#1e3a8a",
+              accent: "#10b981",
+            },
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .image-hover-zoom {
+        transition: transform 0.5s ease;
+      }
+      .image-hover-zoom:hover {
+        transform: scale(1.03);
+      }
+      .facility-card {
+        transition: all 0.3s ease;
+      }
+      .facility-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a
+            href="index.html"
+            class="text-2xl font-bold text-primary flex items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+              />
+            </svg>
+            SemStore
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Home</a
+            >
+            <a
+              href="services.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Services</a
+            >
+            <a
+              href="pricing.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Pricing</a
+            >
+            <a
+              href="process.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >How It Works</a
+            >
+            <a
+              href="facility.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Our Facility</a
+            >
+            <a
+              href="contact.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+          <div class="flex flex-col space-y-3">
+            <a
+              href="index.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Home</a
+            >
+            <a
+              href="services.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Services</a
+            >
+            <a
+              href="pricing.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Pricing</a
+            >
+            <a
+              href="process.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >How It Works</a
+            >
+            <a
+              href="facility.html"
+              class="text-gray-800 hover:tsext-primary font-medium transition-colors py-2"
+              >Our Facility</a
+            >
+            <a
+              href="contact.html"
+              class="text-gray-800 hover:text-primary font-medium transition-colors py-2"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-primary to-secondary text-white py-24"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Our Storage Facility
+        </h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Secure, monitored storage designed for student needs
+        </p>
+        <a
+          href="contact.html"
+          class="inline-block bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300"
+        >
+          Book a Tour
+        </a>
+      </div>
+    </section>
+
+    <!-- Facility Gallery -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <!-- Exterior Section -->
+        <div class="mb-16">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              <i class="fas fa-building text-primary mr-3"></i> Facility
+              Exterior
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Our secure location with 24/7 monitoring and easy access for
+              students
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div
+              class="facility-card rounded-xl overflow-hidden shadow-lg bg-white"
+            >
+              <div class="overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="SemStore building exterior front view"
+                  class="w-full h-64 md:h-80 object-cover image-hover-zoom"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Main Entrance
+                </h3>
+                <p class="text-gray-600">
+                  Secure access with electronic gates and CCTV surveillance
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="facility-card rounded-xl overflow-hidden shadow-lg bg-white"
+            >
+              <div class="overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="SemStore loading and parking area"
+                  class="w-full h-64 md:h-80 object-cover image-hover-zoom"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Loading Area
+                </h3>
+                <p class="text-gray-600">
+                  Convenient parking and loading zones for easy drop-off
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motorcycle Storage Section -->
+        <div class="mb-16">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              <i class="fas fa-motorcycle text-primary mr-3"></i> Motorcycle
+              Storage
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Dedicated indoor parking with enhanced security features
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="facility-card rounded-xl overflow-hidden shadow-lg bg-white"
+            >
+              <div class="overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Indoor motorcycle parking area"
+                  class="w-full h-64 object-cover image-hover-zoom"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Indoor Parking
+                </h3>
+                <p class="text-gray-600">
+                  Weather-protected space with individual parking slots
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="facility-card rounded-xl overflow-hidden shadow-lg bg-white"
+            >
+              <div class="overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Motorcycle security anchors"
+                  class="w-full h-64 object-cover image-hover-zoom"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Security Anchors
+                </h3>
+                <p class="text-gray-600">
+                  Heavy-duty ground anchors for additional security
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="facility-card rounded-xl overflow-hidden shadow-lg bg-white"
+            >
+              <div class="overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Motorcycle covers and protection"
+                  class="w-full h-64 object-cover image-hover-zoom"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                  Protection
+                </h3>
+                <p class="text-gray-600">
+                  Optional covers available to protect from dust
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Features -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            <i class="fas fa-shield-alt text-primary mr-3"></i> Security
+            Features
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Your belongings are protected with multiple layers of security
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="text-center p-6 bg-white rounded-xl shadow-md">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-camera text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">24/7 CCTV</h3>
+            <p class="text-gray-600 text-sm">HD surveillance cameras</p>
+          </div>
+
+          <div class="text-center p-6 bg-white rounded-xl shadow-md">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-fingerprint text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Access Control</h3>
+            <p class="text-gray-600 text-sm">Electronic gate access</p>
+          </div>
+
+          <div class="text-center p-6 bg-white rounded-xl shadow-md">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-user-shield text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">On-site Staff</h3>
+            <p class="text-gray-600 text-sm">During business hours</p>
+          </div>
+
+          <div class="text-center p-6 bg-white rounded-xl shadow-md">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-fire-extinguisher text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Fire Safety</h3>
+            <p class="text-gray-600 text-sm">Smoke detectors & extinguishers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+          Ready to Store With Us?
+        </h2>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          Book your storage space today or schedule a facility tour
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="contact.html"
+            class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition duration-300"
+          >
+            Contact Us
+          </a>
+          <a
+            href="tel:+60123456789"
+            class="bg-white hover:bg-gray-200 text-primary font-bold py-3 px-8 rounded-full transition duration-300"
+          >
+            <i class="fas fa-phone mr-2"></i> Call Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">SemStore</h3>
+            <p class="text-gray-400">
+              Student storage solutions for semester breaks and vacations.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="facility.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Our Facility</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Information</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="pricing.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="process.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >How It Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Contact</h4>
+            <address class="text-gray-400 not-italic">
+              <p>123 Campus Drive</p>
+              <p>University Town, 12345</p>
+              <p class="mt-2">Email: info@semstore.com</p>
+              <p>Phone: (123) 456-7890</p>
+            </address>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2023 SemStore. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+
+        // Change the icon based on menu state
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenuButton.innerHTML = isOpen
+          ? `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+         </svg>`
+          : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+         </svg>`;
+      });
+    </script>
+  </body>
+</html>
