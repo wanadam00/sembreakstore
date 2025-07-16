@@ -180,7 +180,7 @@
           How to Reach Us
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <!-- Phone Card -->
           <div
             class="bg-white rounded-xl shadow-lg p-8 text-center contact-card"
@@ -221,7 +221,7 @@
           </div>
 
           <!-- Email Card -->
-          <div
+          <!-- <div
             class="bg-white rounded-xl shadow-lg p-8 text-center contact-card"
           >
             <div
@@ -237,7 +237,7 @@
             >
               Email Us
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -248,8 +248,17 @@
         <div class="bg-white rounded-xl shadow-lg overflow-hidden">
           <div class="h-96 bg-gray-200 flex items-center justify-center">
             <!-- Embedded Google Map -->
-            <iframe
+            <!-- <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.123456789012!2d101.12345678901234!3d3.1234567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMDcnMjQuNCJOIDEwMcKwMDcnMjQuNCJF!5e0!3m2!1sen!2smy!4v1234567890123!5m2!1sen!2smy"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe> -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3983.4034885909164!2d101.3817550758668!3d3.249465352525949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMTQnNTguMSJOIDEwMcKwMjMnMDMuNiJF!5e0!3m2!1sen!2smy!4v1752640641642!5m2!1sen!2smy"
               width="100%"
               height="100%"
               style="border: 0"
@@ -304,7 +313,7 @@
     </section>
 
     <!-- Social Media Section -->
-    <section class="py-16">
+    <!-- <section class="py-16">
       <div class="container mx-auto px-6 text-center">
         <h2 class="text-2xl font-bold text-gray-800 mb-6">
           Follow Us on Social Media
@@ -339,7 +348,7 @@
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- FAQ Section -->
     <section class="py-16 bg-gray-100">
@@ -353,7 +362,7 @@
             class="border border-gray-200 rounded-lg overflow-hidden bg-white"
           >
             <button
-              class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition"
+              class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition"
             >
               <h3 class="text-lg font-semibold text-gray-800">
                 How do I book storage space?
@@ -372,12 +381,16 @@
                 ></path>
               </svg>
             </button>
-            <div class="px-6 pb-6 pt-0">
-              <p class="text-gray-600">
-                Simply call us at +60 12-345 6789 or message us on WhatsApp.
-                We'll guide you through the booking process and answer any
-                questions you might have about our student storage services.
-              </p>
+            <div
+              class="faq-content px-6 pb-0 pt-0 max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="pb-6">
+                <p class="text-gray-600">
+                  Simply call us at +60 12-345 6789 or message us on WhatsApp.
+                  We'll guide you through the booking process and answer any
+                  questions you might have about our student storage services.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -386,7 +399,7 @@
             class="border border-gray-200 rounded-lg overflow-hidden bg-white"
           >
             <button
-              class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition"
+              class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition"
             >
               <h3 class="text-lg font-semibold text-gray-800">
                 What payment methods do you accept?
@@ -405,12 +418,16 @@
                 ></path>
               </svg>
             </button>
-            <div class="px-6 pb-6 pt-0">
-              <p class="text-gray-600">
-                We accept cash, bank transfer, and most e-wallets (GrabPay,
-                Touch 'n Go). Payment is due when you drop off your items for
-                storage.
-              </p>
+            <div
+              class="faq-content px-6 pb-0 pt-0 max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="pb-6">
+                <p class="text-gray-600">
+                  We accept cash, bank transfer, and most e-wallets (GrabPay,
+                  Touch 'n Go). Payment is due when you drop off your items for
+                  storage.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -419,7 +436,7 @@
             class="border border-gray-200 rounded-lg overflow-hidden bg-white"
           >
             <button
-              class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition"
+              class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition"
             >
               <h3 class="text-lg font-semibold text-gray-800">
                 Can I access my items during storage?
@@ -438,12 +455,16 @@
                 ></path>
               </svg>
             </button>
-            <div class="px-6 pb-6 pt-0">
-              <p class="text-gray-600">
-                Yes! Just give us a call or WhatsApp message at least 24 hours
-                in advance to schedule an access time. We're happy to retrieve
-                specific items for you during the storage period.
-              </p>
+            <div
+              class="faq-content px-6 pb-0 pt-0 max-h-0 overflow-hidden transition-all duration-300"
+            >
+              <div class="pb-6">
+                <p class="text-gray-600">
+                  Yes! Just give us a call or WhatsApp message at least 24 hours
+                  in advance to schedule an access time. We're happy to retrieve
+                  specific items for you during the storage period.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -673,6 +694,36 @@
           : `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
          </svg>`;
+      });
+      document.querySelectorAll(".faq-toggle").forEach((button) => {
+        button.addEventListener("click", () => {
+          const faqItem = button.closest(".border");
+          const content = faqItem.querySelector(".faq-content");
+          const icon = button.querySelector("svg");
+
+          // Close all other FAQ items first
+          document.querySelectorAll(".faq-content").forEach((item) => {
+            if (item !== content) {
+              item.classList.add("max-h-0");
+              item.classList.remove("pb-6");
+              item.previousElementSibling
+                .querySelector("svg")
+                .classList.remove("rotate-180");
+            }
+          });
+
+          // Toggle the current item
+          if (content.classList.contains("max-h-0")) {
+            content.classList.remove("max-h-0");
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.classList.add("pb-6");
+            icon.classList.add("rotate-180");
+          } else {
+            content.classList.add("max-h-0");
+            content.classList.remove("pb-6");
+            icon.classList.remove("rotate-180");
+          }
+        });
       });
     </script>
   </body>
