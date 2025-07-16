@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - SemStore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#1e3a8a',
+                        accent: '#10b981',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-primary">SemStore</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-primary font-medium">Home</a>
+                    <a href="services.html" class="text-gray-800 hover:text-primary font-medium">Services</a>
+                    <a href="pricing.html" class="text-primary font-medium">Pricing</a>
+                    <a href="process.html" class="text-gray-800 hover:text-primary font-medium">How It Works</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-primary font-medium">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Simple, Transparent Pricing</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Affordable storage solutions designed for student budgets.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="inline-flex rounded-md shadow-sm mb-6" role="group">
+                    <button type="button" class="px-6 py-3 text-sm font-medium rounded-l-lg bg-primary text-white">
+                        Monthly
+                    </button>
+                    <button type="button" class="px-6 py-3 text-sm font-medium rounded-r-lg bg-gray-200 text-gray-800 hover:bg-gray-300">
+                        Semester Package
+                    </button>
+                </div>
+                <p class="text-gray-600">Save 15% with our semester-long packages!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plan 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="bg-gray-100 px-6 py-8 text-center">
+                        <h3 class="text-xl font-semibold mb-2">Small Items</h3>
+                        <p class="text-gray-600 mb-4">Backpacks, boxes, small luggage</p>
+                        <div class="flex justify-center items-baseline mb-2">
+                            <span class="text-4xl font-bold text-primary">$15</span>
+                            <span class="text-gray-500 ml-1">/month</span>
+                        </div>
+                        <p class="text-sm text-gray-500">$12.75/month with semester package</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Up to 2 cubic feet
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Climate controlled
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Inventory tagging
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Basic insurance
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="mt-6 block w-full bg-primary hover:bg-secondary text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Choose Plan
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Plan 2 (Featured) -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-xl border-2 border-accent transform hover:-translate-y-2 transition duration-300">
+                    <div class="bg-accent px-4 py-2 text-center text-white text-sm font-semibold">
+                        MOST POPULAR
+                    </div>
+                    <div class="bg-gray-100 px-6 py-8 text-center">
+                        <h3 class="text-xl font-semibold mb-2">Medium Items</h3>
+                        <p class="text-gray-600 mb-4">Large luggage, small appliances</p>
+                        <div class="flex justify-center items-baseline mb-2">
+                            <span class="text-4xl font-bold text-primary">$25</span>
+                            <span class="text-gray-500 ml-1">/month</span>
+                        </div>
+                        <p class="text-sm text-gray-500">$21.25/month with semester package</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Up to 5 cubic feet
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Climate controlled
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Inventory tagging
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Enhanced insurance
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Free pickup/dropoff
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="mt-6 block w-full bg-accent hover:bg-green-600 text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Choose Plan
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Plan 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <div class="bg-gray-100 px-6 py-8 text-center">
+                        <h3 class="text-xl font-semibold mb-2">Large Items</h3>
+                        <p class="text-gray-600 mb-4">Bikes, furniture, multiple items</p>
+                        <div class="flex justify-center items-baseline mb-2">
+                            <span class="text-4xl font-bold text-primary">$40</span>
+                            <span class="text-gray-500 ml-1">/month</span>
+                        </div>
+                        <p class="text-sm text-gray-500">$34/month with semester package</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Up to 15 cubic feet
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Climate controlled
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Inventory tagging
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Premium insurance
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Free pickup/dropoff
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Free protective wrapping
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="mt-6 block w-full bg-primary hover:bg-secondary text-white text-center font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Choose Plan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Pricing Info -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Additional Services</h2>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Service
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Price
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Description
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    Bike Maintenance
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    $15/month
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-500">
+                                    Monthly tune-up while in storage
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    Electronics Check
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    $10/month
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-500">
+                                    Monthly power-up and check
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    Vacuum Sealing
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    $5/item
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-500">
+                                    For clothing and soft items
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    Item Retrieval
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    $10/request
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-500">
+                                    Get specific items during storage period
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Discount -->
+    <section class="py-16">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto bg-accent bg-opacity-10 rounded-xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Student Discount</h2>
+                <p class="text-gray-600 mb-6">Show your valid student ID at checkout to receive an additional 10% off your total storage costs!</p>
+                <p class="text-sm text-gray-500">Discount applies to base storage fees only, not additional services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">SemStore</h3>
+                    <p class="text-gray-400">Student storage solutions for semester breaks and vacations.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="pricing.html" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Information</h4>
+                    <ul class="space-y-2">
+                        <li><a href="process.html" class="text-gray-400 hover:text-white transition">How It Works</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <address class="text-gray-400 not-italic">
+                        <p>123 Campus Drive</p>
+                        <p>University Town, 12345</p>
+                        <p class="mt-2">Email: info@semstore.com</p>
+                        <p>Phone: (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 SemStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
